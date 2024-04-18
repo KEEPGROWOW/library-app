@@ -49,12 +49,12 @@ class CalculatorTest {
         calculator.divide(3)
         //then
         if (calculator.number != 2) {
-            throw IllegalSFtateException()
+            throw IllegalArgumentException()
         }
     }
     fun divideExceptionTest() {
         //given
-        var calculator = Calculator(6)
+        val calculator = Calculator(6)
 
         try {
         //when
