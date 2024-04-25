@@ -62,8 +62,8 @@ class BookSeviceTest @Autowired constructor(
         )
         // 유저생성
         userRepository.saveAll(listOf(
-                User("A", 28),
-                User("B",null)
+            User("A", 28),
+            User("B", null)
             )
         )
 
@@ -99,7 +99,7 @@ class BookSeviceTest @Autowired constructor(
     fun loanBookFailTest() {
         //given
         bookRepository.save(Book("이상한 나라"))
-        val savedUser = userRepository.save(User("A",null))
+        val savedUser = userRepository.save(User("A", null))
         userLoanHistoryRepository.save(UserLoanHistory(savedUser,"이상한 나라",false))
         val request = BookLoanRequest("A","이상한 나라")
 

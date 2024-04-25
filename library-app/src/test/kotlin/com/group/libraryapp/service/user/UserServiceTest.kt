@@ -44,7 +44,7 @@ class UserServiceTest @Autowired constructor(
     fun getUsersTest() {
         //given
         userRepository.saveAll(listOf(
-            User("A", 28 ),
+            User("A", 28),
             User("B", null),
         ))
         //when
@@ -61,7 +61,7 @@ class UserServiceTest @Autowired constructor(
     fun updateUserNameTest() {
         //given
         val savedUser = userRepository.save(User("A", null))
-        val request = UserUpdateRequest(savedUser.id, "B")
+        val request = UserUpdateRequest(savedUser.id!!, "B") // id는 한번 저장된 뒤는 null일 될 수 없으므로  !! 처리
 
         //when
         userService.updateUserName(request)
