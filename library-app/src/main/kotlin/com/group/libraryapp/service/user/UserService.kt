@@ -23,7 +23,7 @@ class UserService(
     @Transactional(readOnly = true)
     fun getUsers():List<UserResponse> {
         return userRepository.findAll()
-            .map { user ->  UserResponse(user) }  // UserReponse(it) 변환가능
+            .map { user ->  UserResponse.of(user) }  // UserReponse(it) 변환가능
     }
 
     @Transactional
