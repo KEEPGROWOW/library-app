@@ -18,7 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class BookSeviceTest @Autowired constructor(
+class BookServiceTest @Autowired constructor(
     private val bookService: BookService,
     private val bookRepository: BookRepository,
     private val userRepository: UserRepository,
