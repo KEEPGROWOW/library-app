@@ -20,6 +20,10 @@ class UserLoanHistory(
 
 
 ){
+    // 간단한 상태값 비교로직을 커스텀 getter를 통해 코도 재활용성 향상
+    val isReturn : Boolean
+        get() = this.status == UserLoanStatus.RETURNED
+
     fun doReturn() {
         this.status = UserLoanStatus.RETURNED
     }
