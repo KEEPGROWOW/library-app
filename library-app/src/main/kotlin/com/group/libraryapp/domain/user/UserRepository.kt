@@ -8,6 +8,6 @@ interface UserRepository:JpaRepository<User, Long> {
     fun findByName(name: String): User?
 
 
-    @Query("SELECT u FROM User u LEFT JOIN u.userLoanHistories")
+    @Query("SELECT DISTINCT u FROM User u LEFT JOIN FETCH u.userLoanHistories")
     fun findAlWithHistories():List<User>
 }

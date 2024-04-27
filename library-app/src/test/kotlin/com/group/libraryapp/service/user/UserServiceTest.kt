@@ -23,6 +23,7 @@ class UserServiceTest @Autowired constructor(
 
     @AfterEach
     fun clean() {
+        println("CLEAN 시작~~~~~")   // 이 위의 부분만 Service 계층에서 날린 쿼리
         userRepository.deleteAll()
     }
 
