@@ -21,7 +21,7 @@ class BookController (
 
     @PostMapping("/book/loan")
     fun loanBook(@RequestBody request: BookLoanRequest) {
-        bookService.loanBook(request)
+        bookService.loanBook(requestmaster)
     }
 
     @PutMapping("/book/return")
