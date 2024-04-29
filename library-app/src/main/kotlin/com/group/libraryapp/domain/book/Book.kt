@@ -1,17 +1,22 @@
 package com.group.libraryapp.domain.book
 
+import org.jetbrains.annotations.NotNull
 import javax.persistence.*
 
 @Entity
 class Book(
-    val name : String,
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Long = 0,
+
+    @NotNull
+    var name: String,
 
     @Enumerated(EnumType.STRING)
     val type: BookType,
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long? = null,
+
 ) {
 
 
@@ -21,11 +26,15 @@ class Book(
         }
     }
 
+    fun updateName(name: String) {
+        this.name = name;
+    }
+
     companion object {
         fun fixture(
             name: String = "책 이름",
             type: BookType = BookType.COMPUTER,
-            id:Long? =null,
+            id: Long
         ):Book {
             return Book(
                 name = name,

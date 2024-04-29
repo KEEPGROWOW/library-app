@@ -1,0 +1,11 @@
+.next/
+next-env.d.ts
+node_modules/
+yarn.lock
+package-lock.json
+public/
+dist/
+coverage/
+.yarn
+.pnp.cjs
+.pnp.loager.mjs
