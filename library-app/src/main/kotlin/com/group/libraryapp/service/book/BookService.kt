@@ -43,7 +43,10 @@ class BookService(
         returnUser.returnBook(request.bookName)
     }
 
-
+    @Transactional(readOnly = true)
+    fun countLoanedBook(): Int {
+        return userLoanHistoryRepository.findAllByStatus(UserLoanStatus.LOANED).size
+    }
 
 
 }

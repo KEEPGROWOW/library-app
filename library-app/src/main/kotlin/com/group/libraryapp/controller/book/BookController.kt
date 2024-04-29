@@ -27,6 +27,10 @@ class BookController (
         bookService.returnBook(request)
     }
 
+    @GetMapping("/book/loan")
+    fun countLoanedBook():Int {
+        return bookService.countLoanedBook()
 
+    }
 
 }
