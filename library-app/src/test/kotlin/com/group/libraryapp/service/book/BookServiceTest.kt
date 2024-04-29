@@ -11,6 +11,7 @@ import com.group.libraryapp.domain.user.loanhistory.UserLoanStatus
 import com.group.libraryapp.dto.book.request.BookLoanRequest
 import com.group.libraryapp.dto.book.request.BookRequest
 import com.group.libraryapp.dto.book.request.BookReturnRequest
+import com.group.libraryapp.dto.book.response.BookStatResponse
 import org.assertj.core.api.AssertionsForInterfaceTypes.assertThat
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.DisplayName
@@ -132,9 +133,62 @@ class BookServiceTest @Autowired constructor(
         assertThat(results[0].user.name).isEqualTo("A")
         assertThat(results[0].bookName).isEqualTo("이상한 나라")
         assertThat(results[0].status).isEqualTo(UserLoanStatus.RETURNED)
+    }
 
+
+
+    @Test
+    @DisplayName("책 대출 도서 권수 조회가 정상 작동한다")
+    fun countLoanBookTest() {
+        //given
+        val savedUser = userRepository.save(User("김성안", null))
+        userLoanHistoryRepository.saveAll(listOf(
+            UserLoanHistory.fixture(savedUser,"A"),
+            UserLoanHistory.fixture(savedUser,"B",UserLoanStatus.RETURNED),
+            UserLoanHistory.fixture(savedUser,"C",UserLoanStatus.RETURNED),
+        ))
+
+        //when
+        val result = bookService.countLoanedBook()
+
+        //then
+        assertThat(result).isEqualTo(1)
 
     }
 
+    @Test
+    @DisplayName("분야별 도서권수 조회가 정상동작한다")
+    fun getBookStatisticsTest() {
+
+        //given
+        // 분야별 도서 권수 입력
+        bookRepository.saveAll(listOf(
+            Book.fixture("A",BookType.COMPUTER),
+            Book.fixture("B",BookType.COMPUTER),
+            Book.fixture("C",BookType.SCIENCE),
+            Book.fixture("D",BookType.SCIENCE),
+            Book.fixture("E",BookType.ECONOMY),
+        ))
+
+        //when
+        // 분야별 도서권수 조회 API 호출
+        val result = bookService.getBookStatistics()
+
+        //then
+        // 분야별 도서 권 수, 총 도서 권수 ,
+        assertThat(result).hasSize(3)
+        val computerDto = result.first { dto -> dto.type == BookType.COMPUTER }
+        assertThat(computerDto.count).isEqualTo(2)
+
+        assertCount(result, BookType.COMPUTER, 2)
+        assertCount(result, BookType.SCIENCE, 2)
+        assertCount(result, BookType.ECONOMY, 1)
+
+    }
+    private fun assertCount(results: List<BookStatResponse>, type: BookType, count: Int) {
+        assertThat(
+            results.first { dto -> dto.type == type }.count
+        ).isEqualTo(count)
+    }
 
 }
