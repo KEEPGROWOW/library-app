@@ -54,7 +54,6 @@ class BookService(
         return bookRepository.findAll()       // List<Book>
             .groupBy { book -> book.type  }   // Map<BookType, List<Book>>
             .map { (type,books) -> BookStatResponse(type, books.size ) }
-
     }
 
 
