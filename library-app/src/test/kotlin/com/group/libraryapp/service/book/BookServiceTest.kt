@@ -158,34 +158,32 @@ class BookServiceTest @Autowired constructor(
 
     @Test
     @DisplayName("분야별 도서권수 조회가 정상동작한다")
-//    fun getBookStatisticsTest() {
-//
-//        //given
-//        // 분야별 도서 권수 입력
-//        bookRepository.saveAll(listOf(
-//            Book.fixture("A",BookType.COMPUTER,1),
-//            Book.fixture("B",BookType.COMPUTER,2),
-//            Book.fixture("C",BookType.SCIENCE,3),
+    fun getBookStatisticsTest() {
+
+        //given
+        // 분야별 도서 권수 입력
+        bookRepository.saveAll(listOf(
+            Book.fixture("A",BookType.COMPUTER),
+            Book.fixture("B",BookType.COMPUTER),
+            Book.fixture("C",BookType.SCIENCE),
 //            Book.fixture("D",BookType.SCIENCE,4),
 //            Book.fixture("E",BookType.ECONOMY,5),
-//        ))
-//
-//        //when
-//        // 분야별 도서권수 조회 API 호출
-//        val result = bookService.getBookStatistics()
-//
-//        //then
-//        // 분야별 도서 권 수, 총 도서 권수 ,
-//        assertThat(result).hasSize(3)
-//        val computerDto = result.first { dto -> dto.type == BookType.COMPUTER }
-//        assertThat(computerDto.count).isEqualTo(2)
-//
-//        assertCount(result, BookType.COMPUTER, 2)
-//        assertCount(result, BookType.SCIENCE, 2)
-//        assertCount(result, BookType.ECONOMY, 1)
-//
-//    }
-    private fun assertCount(results: List<BookStatResponse>, type: BookType, count: Int) {
+        ))
+
+        //when
+        // 분야별 도서권수 조회 API 호출
+        val result = bookService.getBookStatistics()
+
+        //then
+        // 분야별 도서 권 수, 총 도서 권수 ,
+        assertThat(result).hasSize(2)
+
+        assertCount(result, BookType.COMPUTER, 2L)
+        assertCount(result, BookType.SCIENCE, 1L)
+
+
+    }
+    private fun assertCount(results: List<BookStatResponse>, type: BookType, count: Long) {
         assertThat(
             results.first { dto -> dto.type == type }.count
         ).isEqualTo(count)

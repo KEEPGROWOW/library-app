@@ -6,16 +6,15 @@ import javax.persistence.*
 @Entity
 class Book(
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long = 0,
-
     @NotNull
     var name: String,
 
     @Enumerated(EnumType.STRING)
     val type: BookType,
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Long? = null,
 
 ) {
 
@@ -34,8 +33,8 @@ class Book(
         fun fixture(
             name: String = "책 이름",
             type: BookType = BookType.COMPUTER,
-            id: Long
-        ):Book {
+            id: Long? = null
+        ): Book {
             return Book(
                 name = name,
                 type = type,
