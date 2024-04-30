@@ -1,8 +1,10 @@
 HELP.md
 .gradle
 build/
+source-to-output.tab
+cashes-jvm/
 !gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
+!src/main/library-application/build/
 !**/src/test/**/build/
 
 ### STS ###
@@ -18,7 +20,7 @@ bin/
 !**/src/test/**/bin/
 
 ### IntelliJ IDEA ###
-.idea
+../.idea
 *.iws
 *.iml
 *.ipr
