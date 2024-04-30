@@ -19,6 +19,7 @@ bin/
 
 ### IntelliJ IDEA ###
 .idea
+!**/out
 */library-app.iml
 !**/.iws
 !**/.iml
