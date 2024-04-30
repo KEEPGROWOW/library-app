@@ -8,8 +8,11 @@ import com.group.libraryapp.domain.user.loanhistory.UserLoanStatus
 import com.group.libraryapp.dto.book.request.BookLoanRequest
 import com.group.libraryapp.dto.book.request.BookRequest
 import com.group.libraryapp.dto.book.request.BookReturnRequest
+import com.group.libraryapp.dto.book.request.BookUpdateRequest
+import com.group.libraryapp.dto.book.response.BookResponse
 import com.group.libraryapp.dto.book.response.BookStatResponse
 import com.group.libraryapp.util.fail
+import com.group.libraryapp.util.findByIdOrThrow
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
@@ -20,12 +23,38 @@ class BookService(
     private val userLoanHistoryRepository: UserLoanHistoryRepository,
 ) {
 
+    fun findMaxBookId(): Long {
+        val maxIdBook = bookRepository.findFirstByOrderByIdDesc()
+        return maxIdBook?.id ?: 1
+    }
+
     @Transactional
     fun saveBook(request: BookRequest) {
-        val newBook = Book(request.name,request.type)
+//        val newBook = Book(name = request.name, type=request.type)
+//        bookRepository.save(newBook)
+        val maxId = findMaxBookId()
+        // 새로운 Book 객체 생성 및 저장
+        val newBook = Book(id = maxId + 1, name = request.name, type = request.type)
         bookRepository.save(newBook)
     }
 
+    @Transactional(readOnly = true)
+    fun getBooks(): List<BookResponse> {
+        return bookRepository.findAll()
+            .map { book -> BookResponse.of(book) }
+    }
+
+    @Transactional
+    fun updateBook(request: BookUpdateRequest){
+        val book = bookRepository.findByIdOrThrow(request.id)
+        book.updateName(request.name)
+    }
+
+    @Transactional
+    fun deleteBook(id:Long){
+        bookRepository.deleteById(id)
+
+    }
     @Transactional
     fun loanBook(request: BookLoanRequest) {
         val loanBook = bookRepository.findByName(request.bookName)?: fail()  // 도서의 등록 여부

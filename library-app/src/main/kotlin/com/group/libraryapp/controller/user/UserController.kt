@@ -19,6 +19,11 @@ import org.springframework.web.bind.annotation.RestController
 class UserController(
     private val userService: UserService,
 ) {
+//    @GetMapping(value = ["/user/loan", "/user/register", "/user/list", "/history"])
+//    fun index(): String {
+//        return "forward:/static/v4/index.html"
+//    }
+
     @PostMapping("/user")
     fun saveUser(@RequestBody request: UserCreateRequest) {
         userService.saveUser(request)
