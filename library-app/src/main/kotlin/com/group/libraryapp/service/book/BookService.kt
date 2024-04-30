@@ -12,6 +12,7 @@ import com.group.libraryapp.dto.book.request.BookUpdateRequest
 import com.group.libraryapp.dto.book.response.BookResponse
 import com.group.libraryapp.dto.book.response.BookStatResponse
 import com.group.libraryapp.repository.book.BookQuerydslRepository
+import com.group.libraryapp.repository.user.loanhistory.UserLoanHistoryQuerydslRepository
 import com.group.libraryapp.util.fail
 import com.group.libraryapp.util.findByIdOrThrow
 import org.springframework.stereotype.Service
@@ -23,6 +24,7 @@ class BookService(
     private val bookQuerydslRepository: BookQuerydslRepository,
     private val userRepository: UserRepository,
     private val userLoanHistoryRepository: UserLoanHistoryRepository,
+    private val userLoanHistoryQuerydslRepository: UserLoanHistoryQuerydslRepository,
 ) {
 
     fun findMaxBookId(): Long {
@@ -60,7 +62,7 @@ class BookService(
     @Transactional
     fun loanBook(request: BookLoanRequest) {
         val loanBook = bookRepository.findByName(request.bookName)?: fail()  // 도서의 등록 여부
-        if (userLoanHistoryRepository.findByBookNameAndStatus(request.bookName, UserLoanStatus.LOANED) != null) {   // 나의 대여기록에서 반납불가가 조회되지 않는게 아니라면, => false 기록이 존재한다면
+        if (userLoanHistoryQuerydslRepository.find(request.bookName, UserLoanStatus.LOANED) != null) {   // 나의 대여기록에서 반납불가가 조회되지 않는게 아니라면, => false 기록이 존재한다면
             throw IllegalArgumentException("진작 대출되어 있는 책입니다")
         }
 
@@ -77,7 +79,7 @@ class BookService(
 
     @Transactional(readOnly = true)
     fun countLoanedBook(): Int {
-        return userLoanHistoryRepository.countByStatus(UserLoanStatus.LOANED).toInt()
+        return userLoanHistoryQuerydslRepository.count(UserLoanStatus.LOANED).toInt()
     }
 
     @Transactional(readOnly = true)
