@@ -33,6 +33,6 @@
 <br/>
 
 ## Screenshot
-<img src="" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
+<img src="./image/first.png" width="300px" height="300px" title="px(픽셀) 크기 설정" alt="등록페이지"></img>
 <br/>
 <br/>
