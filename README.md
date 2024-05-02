@@ -33,59 +33,72 @@
 <br/>
 
 ## Screenshot
-### 등록페이지
-<img src="./image/first.png" width="400px" height="400px" title="px(픽셀) 크기 설정" alt="등록페이지"></img>
-<br/>
-
 <div>
- <h3>회원 등록</h3>
-<img src="./image/c1.png" align="left" width="400px" height="400px" title="px(픽셀) 크기 설정" alt="등록1"></img>
-<img src="./image/c2.png" align="right" width="400px" height="400px" title="px(픽셀) 크기 설정" alt="등록2"></img>
-</div>
-
-<br/>
-
-<div>
+ <div>
+  <h3>등록페이지</h3>
+  <img src="./image/first.png" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록페이지"></img>
+ </div>
+ <br/>
  
-### 회원 조회
-<img src="./image/c1.png" align="left" width="400px" height="400px" title="px(픽셀) 크기 설정" alt="등록1">
-<img src="./image/c2.png" align="right" width="400px" height="400px" title="px(픽셀) 크기 설정" alt="등록2"></img>
-</div>
+ <div>
+  <section>
+  <h3>회원 등록</h3>
+  <img src="./image/c1.png" align="left" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록1"></img>
+  <img src="./image/c2.png" align="right" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록2"></img>
+  </section>
+ </div>
+ 
+ <br/>
+ 
+ <div>
+  <section>
+  <h3>회원 조회</h3>
+  <img src="./image/r1.png" align="left" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록1"></img>
+  <img src="./image/r2.png" align="right" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록2"></img>
+  </section>
+ </div>
+ 
+ <br/>
+ 
+ 
+ <div>
+  <h3>회원 수정</h3>
+  <img src="./image/u1.png" align="left" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록1"></img>
+  <img src="./image/u2.png" align="right" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록2"></img>
+ </div>
+ <br/>
+ 
+ 
+ <div>
+  <h3>회원 삭제</h3>
+  <img src="./image/d1.png" align="left" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록1"></img>
+  <img src="./image/d2.png" align="right" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록2"></img>
+ </div>
+ <br/>
+ 
+ 
+ <div>
+  <h3>도서 대출</h3>
+  <img src="./image/l1.png" align="left" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록1"></img>
+  <img src="./image/12.png" align="right" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록2"></img>
+ </div>
+ <br/>
+ 
+ 
+ <div>
+  <h3>도서 대출</h3>
+  <img src="./image/re1.png" align="left" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록1"></img>
+  <img src="./image/re2.png" align="right" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록2"></img>
+ </div>
+ 
+ <br/>
+ 
+ <div>
+  <h3>통계</h3>
+  <img src="./image/stat1.png" align="left" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록1"></img>
+  <img src="./image/stat2.png" align="right" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록2"></img>
+ </div>
+ <br/>
 
-<br/>
-
-### 회원 수정
-<div>
-<img src="./image/r1.png" align="left" width="400px" height="400px" title="px(픽셀) 크기 설정" alt="등록1">
-<img src="./image/r2.png" align="right" width="400px" height="400px" title="px(픽셀) 크기 설정" alt="등록2"></img>
-</div>
-<br/>
-
-### 회원 삭제
-<div>
-<img src="./image/u1.png" align="left" width="400px" height="400px" title="px(픽셀) 크기 설정" alt="등록1">
-<img src="./image/u2.png" align="right" width="400px" height="400px" title="px(픽셀) 크기 설정" alt="등록2"></img>
-</div>
-<br/>
-
-### 도서 대출
-<div>
-<img src="./image/11.png" align="left" width="400px" height="400px" title="px(픽셀) 크기 설정" alt="등록1">
-<img src="./image/12.png" align="right" width="400px" height="400px" title="px(픽셀) 크기 설정" alt="등록2"></img>
-</div>
-<br/>
-
-### 도서 반납
-<div>
-<img src="./image/re1.png" align="left" width="400px" height="400px" title="px(픽셀) 크기 설정" alt="등록1">
-<img src="./image/re2.png" align="right" width="400px" height="400px" title="px(픽셀) 크기 설정" alt="등록2"></img>
-</div>
-<br/>
-
-### 통계
-<div>
-<img src="./image/stat1.png" align="left" width="400px" height="400px" title="px(픽셀) 크기 설정" alt="등록1">
-<img src="./image/stat2.png" align="right" width="400px" height="400px" title="px(픽셀) 크기 설정" alt="등록2"></img>
-</div>
-<br/>
+</div
 
