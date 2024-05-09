@@ -40,65 +40,77 @@
  </div>
  <br/>
  
- <div>
-  <section>
+<div style="display: flex; flex-direction: column;">
   <h3>회원 등록</h3>
-  <img src="./image/c1.png" align="left" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록1"></img>
-  <img src="./image/c2.png" align="right" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록2"></img>
-  </section>
- </div>
- 
+  <div style="display: flex; justify-content: space-evenly;">
+    <img src="./image/c1.png" style="width: 350px; height: 350px;" title="px(픽셀) 크기 설정" alt="등록1">
+    <img src="./image/c2.png" style="width: 350px; height: 350px;" title="px(픽셀) 크기 설정" alt="등록2">
+  </div>
+</div>
+
  <br/>
  
- <div>
-  <section>
+ <div style="display: flex; flex-direction:column;">
   <h3>회원 조회</h3>
-  <img src="./image/r1.png" align="left" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록1"></img>
-  <img src="./image/r2.png" align="right" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록2"></img>
-  </section>
+   <div style="display:flex; justify-content:space-evenly;">
+     <img src="./image/r1.png" style="width:350px; height:350px" title="px(픽셀) 크기 설정" alt="등록1"></img>
+      <img src="./image/r2.png" style="width:350px; height:350px" title="px(픽셀) 크기 설정" alt="등록2"></img> 
+   </div>
  </div>
  
  <br/>
  
  
- <div>
+ <div style="display: flex; flex-direction:column;">
   <h3>회원 수정</h3>
-  <img src="./image/u1.png" align="left" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록1"></img>
-  <img src="./image/u2.png" align="right" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록2"></img>
+  <div style="display:flex; justify-content:space-evenly;">
+   <img src="./image/u1.png"  style="width:350px; height:350px;" title="px(픽셀) 크기 설정" alt="등록1"></img>
+   <img src="./image/u2.png"  style="width:350px; height:350px;" title="px(픽셀) 크기 설정" alt="등록2"></img>
+  </div>
  </div>
  <br/>
  
  
- <div>
+ <div style="display: flex; flex-direction:column;">
   <h3>회원 삭제</h3>
-  <img src="./image/d1.png" align="left" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록1"></img>
-  <img src="./image/d2.png" align="right" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록2"></img>
+  <div style="display:flex; justify-content:space-around;">
+    <img src="./image/d1.png" style="width:350px; height:350px;"  title="px(픽셀) 크기 설정" alt="등록1"></img>
+   <img src="./image/d2.png" style="width:350px; height:350px;" title="px(픽셀) 크기 설정" alt="등록2"></img>
+  </div>
  </div>
  <br/>
  
  
- <div>
+ <div style="display: flex; flex-direction:column;">
   <h3>도서 대출</h3>
-  <img src="./image/l1.png" align="left" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록1"></img>
-  <img src="./image/12.png" align="right" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록2"></img>
+  <div style="display:flex; justify-content:space-evenly;"> 
+   <img src="./image/l1.png" style="width:350px; height:350px;" title="px(픽셀) 크기 설정" alt="등록1"></img>
+  <img src="./image/l2.png" style="width:350px; height:350px;" title="px(픽셀) 크기 설정" alt="등록2"></img>
+  </div>
+  
  </div>
  <br/>
  
  
- <div>
+ <div style="display: flex; flex-direction:column;">
   <h3>도서 대출</h3>
-  <img src="./image/re1.png" align="left" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록1"></img>
-  <img src="./image/re2.png" align="right" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록2"></img>
+  <div style="display:flex; justify-content:space-evenly;">
+    <img src="./image/re1.png" style="width:350px; height:350px;" title="px(픽셀) 크기 설정" alt="등록1"></img>
+  <img src="./image/re2.png" style="width:350px; height:350px;" title="px(픽셀) 크기 설정" alt="등록2"></img>
+  </div>
  </div>
  
  <br/>
  
- <div>
+<div style="display: flex; flex-direction:column;">
   <h3>통계</h3>
-  <img src="./image/stat1.png" align="left" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록1"></img>
-  <img src="./image/stat2.png" align="right" width="350px" height="350px" title="px(픽셀) 크기 설정" alt="등록2"></img>
+  <div style="display:flex; justify-content:space-evenly;">
+   <img src="./image/stat1.png" style="width:350px; height:350px;" title="px(픽셀) 크기 설정" alt="등록1"></img>
+  <img src="./image/stat2.png" style="width:350px; height:350px;" title="px(픽셀) 크기 설정" alt="등록2"></img>
+  </div>
+  
  </div>
  <br/>
 
-</div
+</div>
 
